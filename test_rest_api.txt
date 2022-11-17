@@ -1,0 +1,10 @@
+# Mac / Linux
+curl --location --request POST '10.126.7.222:5005/webhooks/rest/webhook' \
+--data-raw '{
+"sender": "test_user",
+"message": "Hi there!"
+}'
+
+
+# Windows
+curl --location --request POST "localhost:5005/webhooks/rest/webhook" --data-raw "{\"sender\": \"test_user\",\"message\": \"Hi there!\"}"
