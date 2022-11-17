@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?><ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3"><Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s project. Highest level possible." x="0" y="0"><bitmap>media/images/box/root.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram scale="118.921"><Box name="Coucou 2" id="1" localization="8" tooltip="Mouvement par apprendissage" x="417" y="219"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Timeline enable="1" fps="25" start_frame="1" end_frame="-1" size="287"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram /></BehaviorKeyframe></BehaviorLayer><ActuatorList model=""><ActuatorCurve name="value" actuator="LElbowRoll" mute="0" unit="0"><Key frame="12" value="-81.1217" /><Key frame="25" value="-81.1217" /><Key frame="37" value="-84.8131" /><Key frame="50" value="-88.5" /><Key frame="62" value="-84.3737" /><Key frame="75" value="-70.9262" /><Key frame="87" value="-61.0823" /><Key frame="100" value="-49.0412" /><Key frame="112" value="-47.1955" /><Key frame="125" value="-38.7579" /><Key frame="137" value="-11.5114" /><Key frame="150" value="-11.5993" /><Key frame="162" value="-11.5993" /><Key frame="175" value="-12.7419" /><Key frame="187" value="-20.8279" /><Key frame="200" value="-83.8463" /><Key frame="212" value="-79.188" /><Key frame="225" value="-79.7154" /><Key frame="237" value="-77.6939" /><Key frame="250" value="-65.389" /><Key frame="262" value="-71.5415" /><Key frame="275" value="-72.0688" /><Key frame="287" value="-71.9809" /></ActuatorCurve><ActuatorCurve name="value" actuator="LElbowYaw" mute="0" unit="0"><Key frame="12" value="-30.9403" /><Key frame="25" value="-30.9403" /><Key frame="37" value="-26.0183" /><Key frame="50" value="-20.8327" /><Key frame="62" value="-21.448" /><Key frame="75" value="-21.5359" /><Key frame="87" value="-21.7117" /><Key frame="100" value="-31.6434" /><Key frame="112" value="-48.6944" /><Key frame="125" value="-52.5617" /><Key frame="137" value="-55.8137" /><Key frame="150" value="-57.7473" /><Key frame="162" value="-58.9778" /><Key frame="175" value="-59.8567" /><Key frame="187" value="-58.0988" /><Key frame="200" value="-53.1769" /><Key frame="212" value="-57.5715" /><Key frame="225" value="-61.5266" /><Key frame="237" value="-58.1867" /><Key frame="250" value="-48.3428" /><Key frame="262" value="-37.0048" /><Key frame="275" value="-30.9403" /><Key frame="287" value="-30.7645" /></ActuatorCurve><ActuatorCurve name="value" actuator="LHand" mute="0" unit="1"><Key frame="12" value="0.2484" /><Key frame="25" value="0.2484" /><Key frame="37" value="0.2484" /><Key frame="50" value="0.2484" /><Key frame="62" value="0.2484" /><Key frame="75" value="0.2484" /><Key frame="87" value="0.2484" /><Key frame="100" value="0.2484" /><Key frame="112" value="0.2484" /><Key frame="125" value="0.2484" /><Key frame="137" value="0.2484" /><Key frame="150" value="0.2484" /><Key frame="162" value="0.2484" /><Key frame="175" value="0.2484" /><Key frame="187" value="0.2484" /><Key frame="200" value="0.2484" /><Key frame="212" value="0.2484" /><Key frame="225" value="0.2484" /><Key frame="237" value="0.2484" /><Key frame="250" value="0.2484" /><Key frame="262" value="0.2484" /><Key frame="275" value="0.2484" /><Key frame="287" value="0.2484" /></ActuatorCurve><ActuatorCurve name="value" actuator="LShoulderPitch" mute="0" unit="0"><Key frame="12" value="56.6878" /><Key frame="25" value="56.6878" /><Key frame="37" value="51.1506" /><Key frame="50" value="41.2188" /><Key frame="62" value="34.2754" /><Key frame="75" value="39.461" /><Key frame="87" value="52.1174" /><Key frame="100" value="65.2133" /><Key frame="112" value="69.6957" /><Key frame="125" value="81.0338" /><Key frame="137" value="86.0436" /><Key frame="150" value="92.3718" /><Key frame="162" value="91.405" /><Key frame="175" value="75.5845" /><Key frame="187" value="21.5311" /><Key frame="200" value="20.2127" /><Key frame="212" value="20.2127" /><Key frame="225" value="21.0037" /><Key frame="237" value="46.4044" /><Key frame="250" value="47.2834" /><Key frame="262" value="51.3264" /><Key frame="275" value="54.051" /><Key frame="287" value="54.051" /></ActuatorCurve><ActuatorCurve name="value" actuator="LShoulderRoll" mute="0" unit="0"><Key frame="12" value="13.0935" /><Key frame="25" value="13.1813" /><Key frame="37" value="13.0935" /><Key frame="50" value="19.2459" /><Key frame="62" value="45.8771" /><Key frame="75" value="62.7523" /><Key frame="87" value="57.6546" /><Key frame="100" value="47.8986" /><Key frame="112" value="44.7345" /><Key frame="125" value="45.7013" /><Key frame="137" value="38.7579" /><Key frame="150" value="26.7167" /><Key frame="162" value="30.0566" /><Key frame="175" value="50.008" /><Key frame="187" value="57.9182" /><Key frame="200" value="41.1309" /><Key frame="212" value="-11.8678" /><Key frame="225" value="-18" /><Key frame="237" value="-18" /><Key frame="250" value="-13.1862" /><Key frame="262" value="-0.529749" /><Key frame="275" value="7.20472" /><Key frame="287" value="7.11683" /></ActuatorCurve><ActuatorCurve name="value" actuator="LWristYaw" mute="0" unit="0"><Key frame="12" value="7.3805" /><Key frame="25" value="7.3805" /><Key frame="37" value="7.29261" /><Key frame="50" value="7.29261" /><Key frame="62" value="7.29261" /><Key frame="75" value="7.20472" /><Key frame="87" value="7.29261" /><Key frame="100" value="7.20472" /><Key frame="112" value="3.16169" /><Key frame="125" value="1.31597" /><Key frame="137" value="1.22808" /><Key frame="150" value="1.22808" /><Key frame="162" value="1.22808" /><Key frame="175" value="1.22808" /><Key frame="187" value="20.0369" /><Key frame="200" value="36.209" /><Key frame="212" value="45.6134" /><Key frame="225" value="45.6134" /><Key frame="237" value="45.6134" /><Key frame="250" value="45.5255" /><Key frame="262" value="46.8439" /><Key frame="275" value="45.5255" /><Key frame="287" value="45.6134" /></ActuatorCurve><ActuatorCurve name="value" actuator="RElbowRoll" mute="0" unit="0"><Key frame="12" value="85.0816" /><Key frame="25" value="85.0816" /><Key frame="37" value="88.5" /><Key frame="50" value="88.5" /><Key frame="62" value="69.1732" /><Key frame="75" value="2" /><Key frame="87" value="25.491" /><Key frame="100" value="27.5125" /><Key frame="112" value="28.4793" /><Key frame="125" value="2" /><Key frame="137" value="13.8014" /><Key frame="150" value="45.6182" /><Key frame="162" value="51.3312" /><Key frame="175" value="37.9716" /><Key frame="187" value="49.837" /><Key frame="200" value="65.5696" /><Key frame="212" value="87.8062" /><Key frame="225" value="85.521" /><Key frame="237" value="88.5" /><Key frame="250" value="87.6305" /><Key frame="262" value="87.982" /><Key frame="275" value="87.2789" /><Key frame="287" value="87.2789" /></ActuatorCurve><ActuatorCurve name="value" actuator="RElbowYaw" mute="0" unit="0"><Key frame="12" value="28.1229" /><Key frame="25" value="28.1229" /><Key frame="37" value="27.5956" /><Key frame="50" value="26.0135" /><Key frame="62" value="42.3614" /><Key frame="75" value="60.4671" /><Key frame="87" value="49.5685" /><Key frame="100" value="43.4161" /><Key frame="112" value="32.2539" /><Key frame="125" value="13.6208" /><Key frame="137" value="12.9177" /><Key frame="162" value="7.95477" /><Key frame="187" value="4.65585" /><Key frame="200" value="4.74374" /><Key frame="212" value="22.4979" /><Key frame="225" value="32.3418" /><Key frame="237" value="32.6054" /><Key frame="250" value="27.5077" /><Key frame="262" value="27.5956" /><Key frame="275" value="28.2108" /><Key frame="287" value="28.2108" /></ActuatorCurve><ActuatorCurve name="value" actuator="RShoulderPitch" mute="0" unit="0"><Key frame="12" value="56.8683" /><Key frame="25" value="56.8683" /><Key frame="37" value="51.7706" /><Key frame="50" value="11.9557" /><Key frame="62" value="-32.5175" /><Key frame="75" value="-36.9121" /><Key frame="87" value="-58.2698" /><Key frame="100" value="-59.3245" /><Key frame="112" value="-57.5667" /><Key frame="125" value="-53.6994" /><Key frame="137" value="-65.5648" /><Key frame="150" value="-64.6859" /><Key frame="162" value="-64.7738" /><Key frame="175" value="-64.598" /><Key frame="187" value="-38.7579" /><Key frame="200" value="-19.7732" /><Key frame="212" value="-1.66754" /><Key frame="225" value="4.74855" /><Key frame="237" value="40.7842" /><Key frame="250" value="51.0675" /><Key frame="262" value="57.2199" /><Key frame="275" value="57.8352" /><Key frame="287" value="57.8352" /></ActuatorCurve><ActuatorCurve name="value" actuator="RShoulderRoll" mute="0" unit="0"><Key frame="12" value="-16.1745" /><Key frame="25" value="-16.1745" /><Key frame="37" value="-18.4597" /><Key frame="50" value="-38.1474" /><Key frame="62" value="-54.4074" /><Key frame="75" value="-64.5149" /><Key frame="87" value="-18.1081" /><Key frame="100" value="13.1813" /><Key frame="112" value="-33.4892" /><Key frame="125" value="-66.6243" /><Key frame="137" value="-22.6785" /><Key frame="150" value="4.12851" /><Key frame="162" value="-48.0792" /><Key frame="175" value="-63.4602" /><Key frame="187" value="-46.4092" /><Key frame="200" value="-37.2685" /><Key frame="212" value="-25.3152" /><Key frame="225" value="-18.5476" /><Key frame="237" value="-16.4382" /><Key frame="250" value="-15.2956" /><Key frame="262" value="-17.4929" /><Key frame="275" value="-17.6686" /><Key frame="287" value="-17.6686" /></ActuatorCurve><ActuatorCurve name="value" actuator="RWristYaw" mute="0" unit="0"><Key frame="12" value="28.8261" /><Key frame="25" value="28.8261" /><Key frame="37" value="28.7382" /><Key frame="50" value="53.7873" /><Key frame="62" value="66.8832" /><Key frame="75" value="63.5433" /><Key frame="87" value="57.4788" /><Key frame="100" value="64.598" /><Key frame="112" value="60.7308" /><Key frame="125" value="47.3712" /><Key frame="187" value="47.6349" /><Key frame="200" value="49.9201" /><Key frame="212" value="53.4358" /><Key frame="225" value="53.4358" /><Key frame="237" value="52.469" /><Key frame="250" value="51.8537" /><Key frame="262" value="51.7658" /><Key frame="275" value="52.3811" /><Key frame="287" value="52.3811" /></ActuatorCurve></ActuatorList></Timeline></Box><Box name="CSV-Ecriture" id="6" localization="8" tooltip='Génère un tableau au format CSV avec les données des clés passées en entrée. Le fichier généré est accessible dans le menu &quot;Connection &gt; advanced &gt; File Transfert&quot;&#x0A;&#x0A;L&apos;enregistrement des données démarre avec la réception d&apos;un signal sur onStart et s&apos;arrête lorsque la boite atteint son nombre d&apos;échantillon ou à un signal sur l&apos;entrée onStop&#x0A;&#x0A;v2.1.3' x="828" y="26"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[import time
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        self.isRunning=False
+        pass
+
+    def onUnload(self):
+        self.isRunning=False
+        pass
+
+    def onInput_onStart(self, p):
+        if self.isRunning==True:
+            return
+        nbMax=self.getParameter("Nombre d'échantillonage")
+        self.isRunning=True
+        p=['DCM/Time']+p
+
+        fdesc=open("/home/nao/"+self.getParameter("fichier"),"wb")
+        if not fdesc:
+            self.logger.error("Ne peut pas ouvrir /home/nao/"+self.getParameter("fichier"))
+            self.isRunning=False
+            self.onStopped()
+            return
+        fdesc.write((';'.join(p))+"\n")
+
+        cpt=0
+        startTime=newTime=lastTime=time.time()
+        startDCMTime=0
+        allDatas=[]
+
+        while self.isRunning==True:
+            #------------------
+            values=ALMemory.getListData(p)
+            if startDCMTime==0:
+                startDCMTime=values[0]
+                values[0]=0
+            else:
+                values[0]-=startDCMTime
+            #------------------
+            allDatas.append(values);
+            #------------------
+            lastTime=newTime
+            newTime=time.time()
+            difTime=0.01-(newTime-lastTime)
+            if difTime<0.001:
+                difTime=0.001
+            time.sleep(difTime)
+            newTime+=difTime
+
+            #------------------
+            cpt+=1
+            if cpt>=nbMax:
+                self.isRunning=False
+        for l in allDatas:
+            fdesc.write((';'.join(map(str,l)))+"\n")
+        fdesc.close()
+        self.isRunnning=False
+        self.onStopped()
+        pass
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is recommanded to call onUnload of this box in a onStop method, as the code written in onUnload is used to stop the box as well
+        pass]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="0" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Parameter name="fichier" inherits_from_parent="0" content_type="3" value="log.csv" default_value="log.csv" custom_choice="0" tooltip="" id="5" /><Parameter name="periode" inherits_from_parent="0" content_type="2" value="0.01" default_value="0.01" min="0.01" max="10" tooltip="En seconde.&#x0A;Doit être un multiple de de 0.01" id="6" /><Parameter name="Nombre d&apos;échantillonage" inherits_from_parent="0" content_type="1" value="100000" default_value="100000" min="1" max="100000" tooltip="" id="7" /></Box><Box name="clés moteur" id="2" localization="8" tooltip="Crée ou concatène les clés ALMemory pour les moteurs&#x0A;v1.14.5" x="319" y="23"><bitmap>media/images/box/movement/stiffness.png</bitmap><bitmap>media/images/box/box-script.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_input(self, p):
+        if p==None:
+            p=[]
+        joints=['HeadPitch','HeadYaw','KneePitch','HipRoll','HipPitch','LElbowRoll','LElbowYaw','LHand','LShoulderPitch','LShoulderRoll','LWristYaw','RElbowRoll','RElbowYaw','RHand','RShoulderPitch','RShoulderRoll','RWristYaw']
+        type=self.getParameter('Type')
+        subKey='%s/Sensor'%type
+        if type=='Position/Sensor':
+            subKey='Position/Sensor'
+        if type=='Position/Actuator':
+            subKey='Position/Actuator'
+        if type=='Hardness':
+            subKey='Hardness/Actuator'
+        for joint in joints:
+            if self.getParameter(joint):
+                p.append("Device/SubDeviceList/%s/%s/Value"%(joint, subKey))
+        self.output(p)
+        pass]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="input" type="0" type_size="1" nature="1" inner="0" tooltip="" id="2" /><Output name="output" type="0" type_size="1" nature="2" inner="0" tooltip="" id="3" /><Parameter name="Type" inherits_from_parent="0" content_type="3" value="Position" default_value="Position/Sensor" custom_choice="0" tooltip="" id="4"><Choice value="Position/Sensor" /><Choice value="Position/Actuator" /><Choice value="ElectricCurrent" /><Choice value="Temperature" /><Choice value="Hardness" /></Parameter><Parameter name="HeadPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="5" /><Parameter name="HeadYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="6" /><Parameter name="LElbowRoll" inherits_from_parent="0" content_type="0" value="1" default_value="1" tooltip="" id="7" /><Parameter name="LElbowYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="8" /><Parameter name="LHand" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="9" /><Parameter name="KneePitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="10" /><Parameter name="LShoulderPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="11" /><Parameter name="LShoulderRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="12" /><Parameter name="LWristYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="13" /><Parameter name="RElbowRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="14" /><Parameter name="RElbowYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="15" /><Parameter name="RHand" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="16" /><Parameter name="HipPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="17" /><Parameter name="HipRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="18" /><Parameter name="RShoulderPitch" inherits_from_parent="0" content_type="0" value="1" default_value="1" tooltip="" id="19" /><Parameter name="RShoulderRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="20" /><Parameter name="RWristYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="21" /></Box><Box name="clés moteur" id="5" localization="8" tooltip="Crée ou concatène les clés ALMemory pour les moteurs&#x0A;v1.14.5" x="451" y="29"><bitmap>media/images/box/movement/stiffness.png</bitmap><bitmap>media/images/box/box-script.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_input(self, p):
+        if p==None:
+            p=[]
+        joints=['HeadPitch','HeadYaw','KneePitch','HipRoll','HipPitch','LElbowRoll','LElbowYaw','LHand','LShoulderPitch','LShoulderRoll','LWristYaw','RElbowRoll','RElbowYaw','RHand','RShoulderPitch','RShoulderRoll','RWristYaw']
+        type=self.getParameter('Type')
+        subKey='%s/Sensor'%type
+        if type=='Position/Sensor':
+            subKey='Position/Sensor'
+        if type=='Position/Actuator':
+            subKey='Position/Actuator'
+        if type=='Hardness':
+            subKey='Hardness/Actuator'
+        for joint in joints:
+            if self.getParameter(joint):
+                p.append("Device/SubDeviceList/%s/%s/Value"%(joint, subKey))
+        self.output(p)
+        pass]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="input" type="0" type_size="1" nature="1" inner="0" tooltip="" id="2" /><Output name="output" type="0" type_size="1" nature="2" inner="0" tooltip="" id="3" /><Parameter name="Type" inherits_from_parent="0" content_type="3" value="Position/Actuator" default_value="Position/Sensor" custom_choice="0" tooltip="" id="4"><Choice value="Position/Sensor" /><Choice value="Position/Actuator" /><Choice value="ElectricCurrent" /><Choice value="Temperature" /><Choice value="Hardness" /></Parameter><Parameter name="HeadPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="5" /><Parameter name="HeadYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="6" /><Parameter name="LElbowRoll" inherits_from_parent="0" content_type="0" value="1" default_value="1" tooltip="" id="7" /><Parameter name="LElbowYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="8" /><Parameter name="LHand" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="9" /><Parameter name="KneePitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="10" /><Parameter name="LShoulderPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="11" /><Parameter name="LShoulderRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="12" /><Parameter name="LWristYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="13" /><Parameter name="RElbowRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="14" /><Parameter name="RElbowYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="15" /><Parameter name="RHand" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="16" /><Parameter name="HipPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="17" /><Parameter name="HipRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="18" /><Parameter name="RShoulderPitch" inherits_from_parent="0" content_type="0" value="1" default_value="1" tooltip="" id="19" /><Parameter name="RShoulderRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="20" /><Parameter name="RWristYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="21" /></Box><Box name="clés moteur" id="7" localization="8" tooltip="Crée ou concatène les clés ALMemory pour les moteurs&#x0A;v1.14.5" x="613" y="40"><bitmap>media/images/box/movement/stiffness.png</bitmap><bitmap>media/images/box/box-script.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_input(self, p):
+        if p==None:
+            p=[]
+        joints=['HeadPitch','HeadYaw','KneePitch','HipRoll','HipPitch','LElbowRoll','LElbowYaw','LHand','LShoulderPitch','LShoulderRoll','LWristYaw','RElbowRoll','RElbowYaw','RHand','RShoulderPitch','RShoulderRoll','RWristYaw']
+        type=self.getParameter('Type')
+        subKey='%s/Sensor'%type
+        if type=='Position/Sensor':
+            subKey='Position/Sensor'
+        if type=='Position/Actuator':
+            subKey='Position/Actuator'
+        if type=='Hardness':
+            subKey='Hardness/Actuator'
+        for joint in joints:
+            if self.getParameter(joint):
+                p.append("Device/SubDeviceList/%s/%s/Value"%(joint, subKey))
+        self.output(p)
+        pass]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="input" type="0" type_size="1" nature="1" inner="0" tooltip="" id="2" /><Output name="output" type="0" type_size="1" nature="2" inner="0" tooltip="" id="3" /><Parameter name="Type" inherits_from_parent="0" content_type="3" value="ElectricCurrent" default_value="Position/Sensor" custom_choice="0" tooltip="" id="4"><Choice value="Position/Sensor" /><Choice value="Position/Actuator" /><Choice value="ElectricCurrent" /><Choice value="Temperature" /><Choice value="Hardness" /></Parameter><Parameter name="HeadPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="5" /><Parameter name="HeadYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="6" /><Parameter name="LElbowRoll" inherits_from_parent="0" content_type="0" value="1" default_value="1" tooltip="" id="7" /><Parameter name="LElbowYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="8" /><Parameter name="LHand" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="9" /><Parameter name="KneePitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="10" /><Parameter name="LShoulderPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="11" /><Parameter name="LShoulderRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="12" /><Parameter name="LWristYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="13" /><Parameter name="RElbowRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="14" /><Parameter name="RElbowYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="15" /><Parameter name="RHand" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="16" /><Parameter name="HipPitch" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="17" /><Parameter name="HipRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="18" /><Parameter name="RShoulderPitch" inherits_from_parent="0" content_type="0" value="1" default_value="1" tooltip="" id="19" /><Parameter name="RShoulderRoll" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="20" /><Parameter name="RWristYaw" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="21" /></Box><Box name="WakeUp" id="8" localization="0" tooltip="Call a Wake Up process.&#x0A;Stiff all joints and apply stand Init posture if the robot is Stand" x="89" y="27"><bitmap>media/images/box/movement/stiffness.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        pass
+
+    def onLoad(self):
+        self.motion = ALProxy("ALMotion")
+        pass
+
+    def onUnload(self):
+        pass
+
+    def onInput_onStart(self):
+        self.motion.wakeUp()
+        self.onStopped() #~ activate output of the box
+        pass
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is recommended to call onUnload of this box in a onStop method, as the code written in onUnload is used to stop the box as well
+        pass]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Resource name="All motors" type="Lock" timeout="0" /><Resource name="Stiffness" type="Lock" timeout="0" /></Box><Box name="Rest" id="3" localization="0" tooltip="Call a Rest process.&#x0A;Apply crouch posture if the robot is Stand then unStiff all joints" x="808" y="193"><bitmap>media/images/box/movement/stiffness.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        pass
+
+    def onLoad(self):
+        self.motion = ALProxy("ALMotion")
+        pass
+
+    def onUnload(self):
+        pass
+
+    def onInput_onStart(self):
+        self.motion.rest()
+        self.onStopped() #~ activate output of the box
+        pass
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is recommended to call onUnload of this box in a onStop method, as the code written in onUnload is used to stop the box as well
+        pass]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Resource name="All motors" type="Lock" timeout="0" /><Resource name="Stiffness" type="Lock" timeout="0" /></Box><Link inputowner="6" indexofinput="3" outputowner="1" indexofoutput="4" /><Link inputowner="5" indexofinput="2" outputowner="2" indexofoutput="3" /><Link inputowner="7" indexofinput="2" outputowner="5" indexofoutput="3" /><Link inputowner="6" indexofinput="2" outputowner="7" indexofoutput="3" /><Link inputowner="8" indexofinput="2" outputowner="0" indexofoutput="2" /><Link inputowner="2" indexofinput="2" outputowner="8" indexofoutput="4" /><Link inputowner="1" indexofinput="2" outputowner="8" indexofoutput="4" /><Link inputowner="3" indexofinput="2" outputowner="1" indexofoutput="4" /><Link inputowner="0" indexofinput="4" outputowner="3" indexofoutput="4" /></Diagram></BehaviorKeyframe></BehaviorLayer></Timeline></Box></ChoregrapheProject>

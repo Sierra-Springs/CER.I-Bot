@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Exemple communication robot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale = 1.333, minimum-scale = 1.333, maximum-scale = 1.333" />
+  <meta name="viewport" content="width=1280, user-scalable=no" />
+<script src="/libs/qimessaging/2/qimessaging.js"></script>
+</head>
+<body> 
+
+<input type="text" id="mail"><button onclick="raiseEvent('mailReseigne',document.getElementById('mail').value)">Envoyer</button>
+			
+	<script>
+	
+	function subscribeToEvent(event,callback){
+	if(session==null)return;
+	session.service("ALMemory").then(function (ALMemory) {
+	  ALMemory.subscriber(event).then(function (subscriber) {
+		subscriber.signal.connect(callback);
+	  });
+	});
+	}
+	
+	function raiseEvent(event,data){
+	if(session==null)return;
+	session.service("ALMemory").then(function (ALMemory) {
+	  ALMemory.raiseEvent(event,data);
+	});
+	}
+	
+	
+	
+	var session=null
+	QiSession(function (mySession) {
+		session=mySession
+		subscribeToEvent("FrontTactilTouched",function(num){
+			if(document.getElementById("myDiv").style.display!="block"){
+				document.getElementById("myDiv").style.display="block"
+			}
+			else{
+				document.getElementById("myDiv").style.display="none"
+			}
+		})
+	}, function () {
+	  console.log("disconnected");
+	  session=null
+	});
+	</script>
+
+</body>
+</html>

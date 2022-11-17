@@ -1,0 +1,8 @@
+topic: ~blabla()
+language: frf
+
+u:(cloche) ok $output=1
+
+u:(e:input) hey! ne me touche pas!
+
+u:(e:HandLeftBackTouched) la valeur est $HandLeftBackTouched

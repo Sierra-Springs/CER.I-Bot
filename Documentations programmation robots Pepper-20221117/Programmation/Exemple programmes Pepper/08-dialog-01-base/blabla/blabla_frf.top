@@ -1,0 +1,12 @@
+topic: ~blabla()
+language: frf
+
+u:(Bonjour _*)  ^first["$1==12 oui bien" "non"]
+    u1:(oui) super
+        u2:(et toi) ^goto(cava)
+        u2:(ça va) %cava ça va ça va ^stayInScope
+        u2:(ça roule) ça roule
+            u3:(maboule) ^goto(vebien)
+    u2:(non) ho, c'est triste
+    
+u:(quoi de neuf) %vebien Je vais bien

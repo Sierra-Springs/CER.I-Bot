@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.0" uuid="03-event-cas2-fe2e06">
+ <names>
+  <name lang="en_US">03-event-cas2</name>
+ </names>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="03-event-cas2">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+</package>

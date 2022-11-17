@@ -1,0 +1,27 @@
+topic: ~blabla()
+language: frf
+
+concept:(prenom) ["Florian" "Jacky" "Pierre" "Nathalie" "Julie" "Céline"]
+
+proposal:Comment tu t'appelles?
+proposal:Comment tu vas?
+proposal:Que fais-tu de beau?
+
+u:(e:onStart) ^nextProposal
+
+u:(je m'appelle _~prenom)
+    ^first[
+        "$1==Nathalie Tu es belle" 
+        "Enchanté $1"
+     ]
+     , $nom=$1 je suis Nao.
+     ^nextProposal
+
+u:(comment je m'appelle) 
+    ^first[
+        "$nom==Florian tu es mon idol"
+        "Tu t'appelles $nom"
+        "Je ne te connais pas"
+    ]
+    u1:([non "ce n'est pas moi"]) désolé ^clear(nom)
+    u1:(oui {c'est ça}) C'est normal, tu es mon ami

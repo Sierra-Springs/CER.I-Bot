@@ -1,0 +1,10 @@
+topic: ~blabla()
+language: frf
+
+concept:(salutation) [Bonjour hey salut "bien à toi"]
+concept:(affirmation) [oui si sisi ouais wesh yo affirmatif confirmation]
+concept:(negation) [non "non non" négatif "casse-toi"]
+
+u:(~salutation {Nao} {ça va}) ~salutation, ça va?
+    u1:(~affirmation) Super, moi aussi
+    u1:(~negation) oh, ^rand["choupinet" "c'est super" "et tand pis"]
