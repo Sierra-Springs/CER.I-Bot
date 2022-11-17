@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?><ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3"><Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s behavior. Highest level possible." x="0" y="0"><bitmap>media/images/box/root.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram><Box name="RasaCall" id="3" localization="8" tooltip="Cette boite fait le call vers Rasa, en ayant reçu en input les paramètres." x="400" y="76"><bitmap>media/images/box/box-python-script.png</bitmap><script language="4"><content><![CDATA[import urllib2
+<?xml version="1.0" encoding="UTF-8" ?><ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3"><Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s behavior. Highest level possible." x="0" y="0"><bitmap>media/images/box/root.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram scale="84.0896"><Box name="RasaCall" id="3" localization="8" tooltip="Cette boite fait le call vers Rasa, en ayant reçu en input les paramètres." x="400" y="76"><bitmap>media/images/box/box-python-script.png</bitmap><script language="4"><content><![CDATA[import urllib2
 import json
 import random
 import time
@@ -7,7 +7,7 @@ class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self)
         # serveur rasa : rasa run -m models --enable-api --cors “*” --debug
-        self.url = 'http://10.126.7.222:5005/webhooks/rest/webhook/'
+        self.url = 'http://10.126.4.13:5005/webhooks/rest/webhook/'
         self.text = "Bonjour je suis à votre disposition." #None
         self.newCall = True
 
@@ -192,7 +192,7 @@ class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self)
         # serveur ASR : python googleSR_server.py
-        self.url = 'http://192.168.1.57:5000/google?'
+        self.url = 'http://10.126.4.13:5000/google?'
 
     def onLoad(self):
         pass
@@ -210,7 +210,8 @@ class MyClass(GeneratedClass):
         sentence = json.loads(response.body)['sentence']
         if sentence == None:
             sentence = "répète"
-        self.onStopped(u''.join(sentence).encode('utf-8'))
+        #self.onStopped(u''.join(sentence).encode('utf-8'))
+        self.onStopped(str(sentence))
 
     def onInput_onStop(self):
         self.onUnload()
