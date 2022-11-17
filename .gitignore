@@ -140,3 +140,5 @@ cython_debug/
 
 .DS_Store
 .idea
+/projet_monrobotparlant/test.wav
+/projet_monrobotparlant/recording.wav
