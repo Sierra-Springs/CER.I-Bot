@@ -50,6 +50,6 @@
 
 ## Bloom generation
 * ask_bloom_generation
-  - utter_greet
+  - utter_ask_start_of_sentence
 * start_of_sentence
   - action_bloom
