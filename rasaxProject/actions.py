@@ -15,6 +15,10 @@ from rasa_sdk.executor import CollectingDispatcher
 from db_sqlite import select_data
 import datetime
 
+from LANG.msg_string import *
+import requests
+import os
+
 #
 #
 # class ActionHelloWorld(Action):
@@ -42,7 +46,7 @@ class ActionSchedule(Action):
 #           dispatcher.utter_message(text="Your next schedule is Math in room S2")
 
            print(select_data(tracker.get_slot("section"),tracker.get_slot("group")))
-           text="Your next schedule is {}".format(select_data(tracker.get_slot("section"),tracker.get_slot("group")))
+           text="Your next schedule is {}".format(select_data(tracker.get_slot("section"), tracker.get_slot("group")))
            dispatcher.utter_message(text)
 	
            return []
@@ -56,7 +60,38 @@ class ActionTime(Action):
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
            now = datetime.datetime.now()
-           dispatcher.utter_message(text="It is " + now.strftime("%H:%M"))
+           dispatcher.utter_message(text=MSG_THE_TIME_IS(now.strftime("%H:%M")))
 
            return []
 
+
+class ActionBloom(Action):
+
+    def name(self) -> Text:
+        return "action_bloom"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        API_TOKEN = os.environ["BLOOM_API_KEY"]
+
+        API_URL = "https://api-inference.huggingface.co/models/bigscience/bloom"
+        headers = {"Authorization": f"Bearer {API_TOKEN}"}
+
+        def query(payload):
+            response = requests.post(API_URL, headers=headers, json=payload)
+            return response.json()
+
+        output = query({
+            "inputs": tracker.get_slot("start_of_sentence"),
+        })
+
+        dispatcher.utter_message(text=output['generated_text'])
+
+        return []
+
+
+
+if __name__ == '__main__':
+    now = datetime.datetime.now()
+    print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
