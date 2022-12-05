@@ -15,6 +15,8 @@ from rasa_sdk.executor import CollectingDispatcher
 from db_sqlite import select_data
 import datetime
 
+from LANG.msg_string import *
+
 #
 #
 # class ActionHelloWorld(Action):
@@ -42,7 +44,7 @@ class ActionSchedule(Action):
 #           dispatcher.utter_message(text="Your next schedule is Math in room S2")
 
            print(select_data(tracker.get_slot("section"),tracker.get_slot("group")))
-           text="Your next schedule is {}".format(select_data(tracker.get_slot("section"),tracker.get_slot("group")))
+           text="Your next schedule is {}".format(select_data(tracker.get_slot("section"), tracker.get_slot("group")))
            dispatcher.utter_message(text)
 	
            return []
@@ -56,7 +58,7 @@ class ActionTime(Action):
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
            now = datetime.datetime.now()
-           dispatcher.utter_message(text="It is " + now.strftime("%H:%M"))
+           dispatcher.utter_message(text=MSG_THE_TIME_IS(now.strftime("%H:%M")))
 
            return []
 
