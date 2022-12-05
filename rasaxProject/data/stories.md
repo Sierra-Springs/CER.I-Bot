@@ -47,3 +47,9 @@
 ## Ask Time
 * ask_time
   - action_time
+
+## Bloom generation
+* ask_bloom_generation
+  - utter_greet
+* start_of_sentence
+  - action_bloom

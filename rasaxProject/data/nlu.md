@@ -92,3 +92,9 @@
 
 ## intent:give_major
 - [IA](section)
+
+## intent:ask_bloom_generation
+- génère une phrase
+
+## intent:start_of_sentence
+- [Il était une fois](start_of_sentence_entity)

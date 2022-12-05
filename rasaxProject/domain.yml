@@ -1,31 +1,54 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- goodbye
-- affirm
-- deny
-- mood_great
-- mood_unhappy
-- bot_challenge
-- ask_schedule
-- give_group
-- give_section
-- ask_time
-- give_major
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- ask_schedule:
+    use_entities: true
+- give_group:
+    use_entities: true
+- give_section:
+    use_entities: true
+- ask_time:
+    use_entities: true
+- give_major:
+    use_entities: true
+- ask_bloom_generation:
+    use_entities: true
 entities:
 - section
 - group
 - major
 slots:
   group:
-    type: categorical
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
     values:
     - alternant
     - classique
   major:
-    type: categorical
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
     values:
     - math
     - infra
@@ -35,7 +58,10 @@ slots:
     - anglais
     - ecom
   section:
-    type: categorical
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
     values:
     - m1
     - m2
@@ -69,3 +95,5 @@ responses:
 actions:
 - action_schedule
 - action_time
+forms: {}
+e2e_actions: []
