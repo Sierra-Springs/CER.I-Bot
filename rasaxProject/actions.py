@@ -15,9 +15,16 @@ from rasa_sdk.executor import CollectingDispatcher
 from db_sqlite import select_data
 import datetime
 
-from LANG.msg_string import *
 import requests
 import os
+import sys
+
+source_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if source_root not in sys.path:
+    sys.path.append(source_root)
+
+from LANG.msg_string import *
+
 
 #
 #
@@ -91,7 +98,13 @@ class ActionBloom(Action):
         return []
 
 
+def run():
+    now = datetime.datetime.now()
+    print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
+    print(os.environ["BLOOM_API_KEY"])
+
 
 if __name__ == '__main__':
     now = datetime.datetime.now()
     print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
+    print(os.environ["BLOOM_API_KEY"])
