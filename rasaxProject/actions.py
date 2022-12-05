@@ -62,3 +62,7 @@ class ActionTime(Action):
 
            return []
 
+
+if __name__ == '__main__':
+    now = datetime.datetime.now()
+    print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
