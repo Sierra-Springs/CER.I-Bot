@@ -54,6 +54,10 @@
 * start_of_sentence
   - action_bloom
 
+## Weather
+* ask_weather
+  - action_weather
+
 ## Ask presentation
 * presentation : 
     - action_presentation

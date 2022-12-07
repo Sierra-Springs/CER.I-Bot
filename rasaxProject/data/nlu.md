@@ -90,6 +90,9 @@
 ## intent:ask_time
 - what time is it ?
 - When are we ?
+- quelle heure est-il ?
+- il est quelle heure ?
+- donne moi l'heure
 
 ## intent:give_major
 - [IA](section)
@@ -99,6 +102,12 @@
 
 ## intent:start_of_sentence
 - [Il était une fois](start_of_sentence_entity)
+
+## intent:ask_weather
+- quelle est la température actuelle ?
+- quel temps fait-il ?
+- donne moi la météo
+- quelle est la météo ?
 
 ## intent:presentation
 - Qui es-tu ?

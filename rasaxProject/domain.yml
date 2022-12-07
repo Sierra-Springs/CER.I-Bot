@@ -33,11 +33,15 @@ intents:
     use_entities: true
 - start_of_sentence:
     use_entities: true
+- ask_weather:
+    use_entities: true
 - presentation:
     use_entities: true
 - fonctionnalities:
     use_entities: true
-- functionalities:
+- 'presentation :':
+    use_entities: true
+- 'fonctionnalities :':
     use_entities: true
 - 'fonctionnalities :':
     use_entities: true
@@ -116,7 +120,7 @@ actions:
 - action_time
 - action_bloom
 - action_presentation
-- ''
 - action_fonctionnalite
+- action_weather
 forms: {}
 e2e_actions: []

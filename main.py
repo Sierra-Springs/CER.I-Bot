@@ -33,4 +33,16 @@ if __name__ == '__main__':
 
     print(output)
 
+    ville = "Avignon"
+
+    API_key = "30b769c3babdac103e4dfef554b32115"
+    base_url = "http://api.openweathermap.org/data/2.5/weather?"
+
+    Final_url = base_url + "appid=" + API_key + "&q=" + ville + "&units=metric"
+    weather_data = requests.get(Final_url).json()
+
+    temperature = weather_data['main']['temp']
+    response = "La température actuelle à {} est de {} degrée Celsius.".format(ville, temperature)
+    print(response)
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
