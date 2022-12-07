@@ -33,6 +33,10 @@ intents:
     use_entities: true
 - start_of_sentence:
     use_entities: true
+- ask_meteo:
+    use_entities: true
+- ask_weather:
+    use_entities: true
 entities:
 - section
 - group
@@ -101,5 +105,7 @@ actions:
 - action_schedule
 - action_time
 - action_bloom
+- action_meteo
+- action_weather
 forms: {}
 e2e_actions: []

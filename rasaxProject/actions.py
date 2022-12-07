@@ -105,6 +105,42 @@ class ActionBloom(Action):
         return []
 
 
+class ActionWeather(Action):
+
+    def name(self) -> Text:
+        return "action_weather"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # city = tracker.get_slot('city')
+        city = "Avignon"
+
+        API_KEY = "30b769c3babdac103e4dfef554b32115"
+        API_URL = "http://api.openweathermap.org/data/2.5/weather?"
+
+        URL = API_URL + "appid=" + API_KEY + "&q=" + city + "&units=metric"
+
+        def query():
+            # response = requests.post(API_URL, headers=headers, json=payload)
+            response = requests.get(URL)
+            return response.json()
+
+        output = query()
+        print(output)
+
+        try:
+            response = "Il fait {} et la température est de {} degrée Celsius.".format(output['weather'][0]['main'],
+                                                                                       output['main']['temp'])
+        except:
+            response = "Error code : {} -> {}".format(output['cod'], output['message'])
+
+        dispatcher.utter_message(text=response)
+
+        return []
+
+
 def run():
     now = datetime.datetime.now()
     print(MSG_THE_TIME_IS(now.strftime("%H:%M")))

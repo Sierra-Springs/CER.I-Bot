@@ -98,3 +98,9 @@
 
 ## intent:start_of_sentence
 - [Il était une fois](start_of_sentence_entity)
+
+## intent:ask_weather
+- quelle est la température actuelle ?
+- quel temps fait-il ?
+- donne moi la météo
+- quelle est la météo ?

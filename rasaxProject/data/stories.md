@@ -53,3 +53,7 @@
   - utter_ask_start_of_sentence
 * start_of_sentence
   - action_bloom
+
+## Weather
+* ask_weather
+  - action_weather
