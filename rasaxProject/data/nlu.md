@@ -89,6 +89,9 @@
 ## intent:ask_time
 - what time is it ?
 - When are we ?
+- quelle heure est-il ?
+- il est quelle heure ?
+- donne moi l'heure
 
 ## intent:give_major
 - [IA](section)
