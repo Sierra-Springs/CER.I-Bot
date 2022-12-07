@@ -2,9 +2,9 @@ import importlib
 import inspect
 
 module_base = "LANG.MSG."
-
 LANG_MSG_SOURCE = 'LANG_MSG_FRA'
 LANG_MSG_SOURCE_ROLLBACK = 'LANG_MSG_ANG'
+
 
 # Charge Les string pour les messages dans la langue choisie.
 # Si la langue choisie n'est pas du tout disponible, charge la langue par défaut
@@ -48,8 +48,11 @@ def construct_string(*kwargs):
         return STRING_MSG_ROLLBACK[inspect.stack()[1][3]].format(*kwargs)
 
 
+
+
 def MSG_THE_TIME_IS(time):
     return construct_string(time)
+
 
 
 if __name__ == "__main__":
