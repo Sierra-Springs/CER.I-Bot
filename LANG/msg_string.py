@@ -36,39 +36,40 @@ def get_lang_msg_source():
     return LANG_MSG_SOURCE
 
 
-def construct_string(*kwargs):
+def construct_string(args):
     """
     Récupère les strings du dictionnaire correspondant au nom de la méthode appelante.
     Selectionne aléatoirement une string si plusieurs sont disponibles dans une liste
     Complète les placeholder avec les paramètres passés à la fonction et retourne la string construite.
     """
+
     try:
         # Si la string requise est disponible dans la langue choisie
         strings = STRINGS_MSG[inspect.stack()[1][3]]  # strings disponibles pour le message
-        if isinstance(strings, list.__class__):
-            string_index = random.randint(0, len(strings) - 1)  # index de la string choisie
-            selected_string = strings[string_index]
-        else:
-            selected_string = strings
-        return selected_string.format(*kwargs)
     except:
         # Si la string requise n'est pas disponible dans la langue choisie
         strings = STRING_MSG_ROLLBACK[inspect.stack()[1][3]]  # strings disponibles pour le message
-        if isinstance(strings, list.__class__):
-            string_index = random.randint(0, len(strings) - 1)  # index de la string choisie
-            selected_string = strings[string_index]
-        else:
-            selected_string = strings
-        return selected_string.format(*kwargs)
+
+    if isinstance(strings, list):
+        string_index = random.randint(0, len(strings) - 1)  # index de la string choisie
+        selected_string = strings[string_index]
+    else:
+        selected_string = strings
+
+    return selected_string.format(**args)
+
+
+def MSG_TEST(salle):
+    return construct_string(locals())
 
 
 def MSG_THE_TIME_IS(time):
-    return construct_string(time)
+    return construct_string(locals())
 
 
-def MSG_TEST():
-    return construct_string()
+def MSG_INDICATE_ROOM_FOR_CLASS(salle):
+    return construct_string(locals())
 
 if __name__ == "__main__":
     print(MSG_THE_TIME_IS("12:30"))
-    print(MSG_TEST())
+    print(MSG_TEST("C104"))
