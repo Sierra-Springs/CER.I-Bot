@@ -13,11 +13,12 @@
 - see you later
 
 ## intent:affirm
-- yes
+- oui
 - indeed
 - of course
 - that sounds good
 - correct
+- yes 
 
 ## intent:deny
 - no
