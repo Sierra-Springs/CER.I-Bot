@@ -161,8 +161,7 @@ class ActionWeather(Action):
         print(output)
 
         try:
-            response = "Il fait {} et la température est de {} degrée Celsius.".format(output['weather'][0]['main'],
-                                                                                       output['main']['temp'])
+            response = MSG_THE_WEATHER_IS(output['weather'][0]['main'], output['main']['temp'])
         except:
             response = "Error code : {} -> {}".format(output['cod'], output['message'])
 

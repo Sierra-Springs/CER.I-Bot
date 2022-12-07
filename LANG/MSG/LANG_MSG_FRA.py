@@ -8,5 +8,6 @@ STRINGS_MSG = {'MSG_TEST': "Il est {salle}",
                                                "Votre cours a lieu dans la salle {0}}.",
                                                "Le cours se déroule dans la salle {0}}.",
                                                "Vous trouverez votre cours dans la salle {0}}.",
-                                               "Le lieu de votre cours est la salle {0}."]
+                                               "Le lieu de votre cours est la salle {0}."],
+               'MSG_THE_WEATHER_IS': "Il fait {weather} et la température est de {temperature} degrée Celsius."
                }
