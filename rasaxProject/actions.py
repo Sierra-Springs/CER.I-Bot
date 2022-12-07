@@ -11,13 +11,12 @@ from typing import Any, Text, Dict, List
 #
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-
 from db_sqlite import select_data
 import datetime
-
 import requests
 import os
 import sys
+
 
 source_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if source_root not in sys.path:
@@ -74,6 +73,35 @@ class ActionTime(Action):
            return []
 
 
+class ActionPresentation(Action):
+
+    def name(self) -> Text:
+        return "action_presentation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        now = datetime.datetime.now()
+
+        dispatcher.utter_message(text="Bonjour, je suis le robot Pepper" )
+        return []
+
+fonctionnalities=["je peux me présenter","Je donne La Méteo", "l'heure"," et Je raconte une Histoire"]
+class ActionFonctionnalite(Action):
+
+    def name(self) -> Text:
+        return "action_fonctionnalite"
+
+    def run(self, dispatcher: CollectingDispatcher,
+      tracker: Tracker,
+      domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+      answer = "Voici la liste de mes fonctionnalitées, "
+      for funct in fonctionnalities :
+          answer += funct + ", "
+      dispatcher.utter_message(answer)
+      return []
+
+
 class ActionBloom(Action):
 
     def name(self) -> Text:
@@ -116,4 +144,19 @@ def run():
 if __name__ == '__main__':
     now = datetime.datetime.now()
     print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
-    print(os.environ["BLOOM_API_KEY"])
+    #print(os.environ["BLOOM_API_KEY"])
+
+
+    import sys
+    import inspect
+    clsmembers = inspect.getmembers(sys.modules[__name__], inspect.isclass)
+    print(clsmembers)
+    for i,c in enumerate(clsmembers) :
+      if c[0] not in ['CollectingDispatcher','Text','Tracker'] :
+
+        method_list = [method for method in dir(eval(c[0])) if method.startswith('__') is False]
+        '''module = globals()[c[0]]()
+        func = getattr(module, 'name')
+        print(func())'''
+
+

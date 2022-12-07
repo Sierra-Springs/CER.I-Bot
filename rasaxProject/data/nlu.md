@@ -98,3 +98,12 @@
 
 ## intent:start_of_sentence
 - [Il était une fois](start_of_sentence_entity)
+
+## intent:presentation
+- Qui es-tu ?
+- Présente toi ?
+
+## intent:fonctionnalities
+- qu'est ce que tu sais faire ?
+- quelles sont tes actions ?
+- quelles sont tes fonctionnalités ?

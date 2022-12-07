@@ -53,3 +53,12 @@
   - utter_ask_start_of_sentence
 * start_of_sentence
   - action_bloom
+
+## Ask presentation
+* presentation : 
+    - action_presentation
+    - utter_ask_ifNeedHelp
+
+## fonctionnalities
+* fonctionnalities :
+  - action_fonctionnalite

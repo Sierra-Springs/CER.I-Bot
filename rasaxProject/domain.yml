@@ -33,6 +33,12 @@ intents:
     use_entities: true
 - start_of_sentence:
     use_entities: true
+- presentation:
+    use_entities: true
+- fonctionnalities:
+    use_entities: true
+- functionalities:
+    use_entities: true
 entities:
 - section
 - group
@@ -97,9 +103,16 @@ responses:
   - text: What is your main field ?
   utter_ask_start_of_sentence:
   - text: Quel est le début de l'histoire ?
+  utter_ask_ifNeedHelp:
+  - text: Do you need help ?
+  - text: How can i help you ?
+  - text: Do you need somthing ?
 actions:
 - action_schedule
 - action_time
 - action_bloom
+- action_presentation
+- ''
+- action_fonctionnalite
 forms: {}
 e2e_actions: []
