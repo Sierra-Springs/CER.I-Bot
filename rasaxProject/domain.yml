@@ -31,10 +31,13 @@ intents:
     use_entities: true
 - ask_bloom_generation:
     use_entities: true
+- start_of_sentence:
+    use_entities: true
 entities:
 - section
 - group
 - major
+- start_of_sentence_entity
 slots:
   group:
     type: rasa.shared.core.slots.CategoricalSlot
@@ -92,8 +95,11 @@ responses:
   utter_ask_major:
   - text: What is your major ?
   - text: What is your main field ?
+  utter_ask_start_of_sentence:
+  - text: Quel est le début de l'histoire ?
 actions:
 - action_schedule
 - action_time
+- action_bloom
 forms: {}
 e2e_actions: []

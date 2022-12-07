@@ -89,11 +89,18 @@ class ActionBloom(Action):
             response = requests.post(API_URL, headers=headers, json=payload)
             return response.json()
 
+        print("--------------------------------------------")
+        print(tracker.get_slot("start_of_sentence_entity"))
+        print("--------------------------------------------")
         output = query({
-            "inputs": tracker.get_slot("start_of_sentence"),
+            "inputs": tracker.get_slot("start_of_sentence_entity"),
         })
 
-        dispatcher.utter_message(text=output['generated_text'])
+        print(output)
+        try:
+            dispatcher.utter_message(text=output[0]['generated_text'])
+        except:
+            dispatcher.utter_message(text=output['error'])
 
         return []
 
