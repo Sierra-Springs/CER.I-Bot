@@ -107,3 +107,12 @@
 - quel temps fait-il ?
 - donne moi la météo
 - quelle est la météo ?
+
+## intent:presentation
+- Qui es-tu ?
+- Présente toi ?
+
+## intent:fonctionnalities
+- qu'est ce que tu sais faire ?
+- quelles sont tes actions ?
+- quelles sont tes fonctionnalités ?

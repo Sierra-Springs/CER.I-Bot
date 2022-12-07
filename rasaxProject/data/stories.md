@@ -57,3 +57,12 @@
 ## Weather
 * ask_weather
   - action_weather
+
+## Ask presentation
+* presentation : 
+    - action_presentation
+    - utter_ask_ifNeedHelp
+
+## fonctionnalities
+* fonctionnalities :
+  - action_fonctionnalite
