@@ -62,7 +62,18 @@
 * presentation : 
     - action_presentation
     - utter_ask_ifNeedHelp
-
 ## fonctionnalities
 * fonctionnalities :
   - action_fonctionnalite
+## Presentation_deny
+* presentation :
+  - action_presentation
+  - action_fonctionnalite
+  - utter_ask_ifNeedHelp
+* deny : 
+  - utter_goodbye
+
+## happy path 1
+* greet
+  - utter_greet
+  - action_presentation
