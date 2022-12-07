@@ -66,7 +66,9 @@ class ActionTime(Action):
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
            now = datetime.datetime.now()
-           dispatcher.utter_message(text=MSG_THE_TIME_IS(now.strftime("%H:%M")))
+           heure = now.strftime("%H")
+           minute = now.strftime("%M")
+           dispatcher.utter_message(text=MSG_THE_TIME_IS(heure=heure, minute=minute))
 
            return []
 
