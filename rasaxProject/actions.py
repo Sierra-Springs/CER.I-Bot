@@ -81,12 +81,9 @@ class ActionPresentation(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        now = datetime.datetime.now()
-
         dispatcher.utter_message(text="Bonjour, je suis le robot Pepper" )
         return []
 
-fonctionnalities=["je peux me présenter","Je donne La Méteo", "l'heure"," et Je raconte une Histoire"]
 class ActionFonctionnalite(Action):
 
     def name(self) -> Text:
@@ -95,11 +92,15 @@ class ActionFonctionnalite(Action):
     def run(self, dispatcher: CollectingDispatcher,
       tracker: Tracker,
       domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-      answer = "Voici la liste de mes fonctionnalitées, "
-      for funct in fonctionnalities :
-          answer += funct + ", "
-      dispatcher.utter_message(answer)
-      return []
+        fonctionnalities = ["je peux me présenter",
+                            "Je donne La Méteo",
+                            "l'heure",
+                            " et Je raconte une Histoire"]
+        answer = "Voici la liste de mes fonctionnalitées, "
+        for funct in fonctionnalities :
+            answer += funct + ", "
+        dispatcher.utter_message(answer)
+        return []
 
 
 class ActionBloom(Action):
