@@ -191,11 +191,15 @@ def to_html(text):
     return html
 def custom_response_message(text, html):
 
-    f = open("page.html", "w")
-    f.write(html)
-    f.close()
+    try:
+        f = open("../projet_monrobotparlant/NaoRasaASRProject/html/index.html", "w")
+        f.write(html)
+        f.close()
+    except:
+        print("Warning ---> Pas pu créer la page web")
 
-    return "{0}$$$$${1}".format(text,html)
+    return "{0}".format(text)
+    # return "{0}$$$$${1}".format(text,html)
 
 
 class ActionWiki(Action):
@@ -213,6 +217,9 @@ class ActionWiki(Action):
             latest_message = current_state["latest_message"]["text"]
             wikipedia.set_lang("fr")
             data = wikipedia.summary(terme_cle, sentences=2)
+            # pageWeb = wikipedia.page(terme_cle).url
+            # print(pageWeb)
+
 
         except wikipedia.exceptions.PageError:
             data = "Aucune correspondace n'a été trouvé. Veillez réessayer!"
