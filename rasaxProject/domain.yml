@@ -39,14 +39,6 @@ intents:
     use_entities: true
 - fonctionnalities:
     use_entities: true
-- 'presentation :':
-    use_entities: true
-- 'fonctionnalities :':
-    use_entities: true
-- 'fonctionnalities :':
-    use_entities: true
-- 'presentation :':
-    use_entities: true
 entities:
 - section
 - group
