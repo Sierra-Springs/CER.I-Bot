@@ -59,18 +59,18 @@
   - action_weather
 
 ## Ask presentation
-* presentation : 
+* presentation
     - action_presentation
     - utter_ask_ifNeedHelp
 ## fonctionnalities
-* fonctionnalities :
+* fonctionnalities
   - action_fonctionnalite
 ## Presentation_deny
-* presentation :
+* presentation
   - action_presentation
   - action_fonctionnalite
   - utter_ask_ifNeedHelp
-* deny : 
+* deny
   - utter_goodbye
 
 ## happy path 1
