@@ -170,6 +170,49 @@ class ActionWeather(Action):
 
         return []
 
+#################################utils
+from typing import Any, Text, Dict, List, cast
+import wikipedia
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+
+def to_html(text):
+    html = '<div>{0}</div>'
+    html = html.format( text.replace("\n", "<br/>").replace("\\n", "<br/>") )
+    return html
+def custom_response_message(text, html):
+
+    f = open("page.html", "w")
+    f.write(html)
+    f.close()
+
+    return "{0}$$$$${1}".format(text,html)
+
+
+class ActionWiki(Action):
+    def name(self) -> Text:
+        return "action_wiki"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        terme_cle = tracker.get_slot("demande_wiki")
+        print(terme_cle)
+        try:
+            current_state = tracker.current_state()
+            latest_message = current_state["latest_message"]["text"]
+            wikipedia.set_lang("fr")
+            data = wikipedia.summary(terme_cle, sentences=2)
+
+        except wikipedia.exceptions.PageError:
+            data = "Aucune correspondace n'a été trouvé. Veillez réessayer!"
+
+        html = to_html("<div class='joke'>{0}</div>".format(data))
+        print(custom_response_message(data, html))
+        dispatcher.utter_message(custom_response_message(data, html))
+
+        return []
 
 def run():
     now = datetime.datetime.now()
@@ -183,16 +226,6 @@ if __name__ == '__main__':
     #print(os.environ["BLOOM_API_KEY"])
 
 
-    import sys
-    import inspect
-    clsmembers = inspect.getmembers(sys.modules[__name__], inspect.isclass)
-    print(clsmembers)
-    for i,c in enumerate(clsmembers) :
-      if c[0] not in ['CollectingDispatcher','Text','Tracker'] :
 
-        method_list = [method for method in dir(eval(c[0])) if method.startswith('__') is False]
-        '''module = globals()[c[0]]()
-        func = getattr(module, 'name')
-        print(func())'''
 
 

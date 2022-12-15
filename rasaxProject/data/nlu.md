@@ -13,12 +13,11 @@
 - see you later
 
 ## intent:affirm
-- oui
+- yes
 - indeed
 - of course
 - that sounds good
 - correct
-- yes 
 
 ## intent:deny
 - no
@@ -117,3 +116,6 @@
 - qu'est ce que tu sais faire ?
 - quelles sont tes actions ?
 - quelles sont tes fonctionnalités ?
+
+## intent:demande_wikipedia
+- Parle moi d'[Avignon Université](demande_wiki)

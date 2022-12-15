@@ -37,21 +37,22 @@ intents:
     use_entities: true
 - presentation:
     use_entities: true
+- 'fonctionnalities :':
+    use_entities: true
+- demande_wikipedia:
+    use_entities: true
+- 'presentation :':
+    use_entities: true
+- 'deny :':
+    use_entities: true
 - fonctionnalities:
-    use_entities: true
-- 'presentation :':
-    use_entities: true
-- 'fonctionnalities :':
-    use_entities: true
-- 'fonctionnalities :':
-    use_entities: true
-- 'presentation :':
     use_entities: true
 entities:
 - section
 - group
 - major
 - start_of_sentence_entity
+- demande_wiki
 slots:
   group:
     type: rasa.shared.core.slots.CategoricalSlot
@@ -82,6 +83,11 @@ slots:
     values:
     - m1
     - m2
+  demande_wiki:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -122,5 +128,6 @@ actions:
 - action_presentation
 - action_fonctionnalite
 - action_weather
+- action_wiki
 forms: {}
 e2e_actions: []
