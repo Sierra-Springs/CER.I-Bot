@@ -66,6 +66,8 @@ def MSG_TEST(salle):
 def MSG_THE_TIME_IS(heure, minute):
     return construct_string(locals())
 
+def MSG_THE_WEATHER_IS(weather, temperature):
+    return construct_string(locals())
 
 def MSG_INDICATE_ROOM_FOR_CLASS(salle):
     return construct_string(locals())
@@ -73,3 +75,4 @@ def MSG_INDICATE_ROOM_FOR_CLASS(salle):
 if __name__ == "__main__":
     print(MSG_THE_TIME_IS(heure="12", minute="30"))
     print(MSG_TEST("C104"))
+    print(MSG_THE_WEATHER_IS("Clear", 4.52))

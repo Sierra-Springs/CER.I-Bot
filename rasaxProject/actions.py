@@ -81,12 +81,9 @@ class ActionPresentation(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        now = datetime.datetime.now()
-
         dispatcher.utter_message(text="Bonjour, je suis le robot Pepper" )
         return []
 
-fonctionnalities=["je peux me présenter","Je donne La Méteo", "l'heure"," et Je raconte une Histoire"]
 class ActionFonctionnalite(Action):
 
     def name(self) -> Text:
@@ -95,11 +92,15 @@ class ActionFonctionnalite(Action):
     def run(self, dispatcher: CollectingDispatcher,
       tracker: Tracker,
       domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-      answer = "Voici la liste de mes fonctionnalitées, "
-      for funct in fonctionnalities :
-          answer += funct + ", "
-      dispatcher.utter_message(answer)
-      return []
+        fonctionnalities = ["je peux me présenter",
+                            "Je donne La Méteo",
+                            "l'heure",
+                            " et Je raconte une Histoire"]
+        answer = "Voici la liste de mes fonctionnalitées, "
+        for funct in fonctionnalities :
+            answer += funct + ", "
+        dispatcher.utter_message(answer)
+        return []
 
 
 class ActionBloom(Action):
@@ -150,7 +151,10 @@ class ActionWeather(Action):
         API_KEY = "30b769c3babdac103e4dfef554b32115"
         API_URL = "http://api.openweathermap.org/data/2.5/weather?"
 
-        URL = API_URL + "appid=" + API_KEY + "&q=" + city + "&units=metric"
+        # API_GGL = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=fr&dt=t&q="
+
+        URL = API_URL + "appid=" + API_KEY + "&q=" + city + "&units=metric" + "&lang=fr"
+        print(URL)
 
         def query():
             # response = requests.post(API_URL, headers=headers, json=payload)
@@ -160,9 +164,14 @@ class ActionWeather(Action):
         output = query()
         print(output)
 
+        # def translate(weather):
+        #     trad = requests.get(API_GGL + weather)
+        #     return trad.json()
+
         try:
-            response = "Il fait {} et la température est de {} degrée Celsius.".format(output['weather'][0]['main'],
-                                                                                       output['main']['temp'])
+            response = MSG_THE_WEATHER_IS(output['weather'][0]['description'], output['main']['temp'])
+            # trad = translate("The weather is " + "Rain")
+            # print(trad)
         except:
             response = "Error code : {} -> {}".format(output['cod'], output['message'])
 

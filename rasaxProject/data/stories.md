@@ -72,7 +72,7 @@
   - action_presentation
   - action_fonctionnalite
   - utter_ask_ifNeedHelp
-* deny 
+* deny
   - utter_goodbye
 
 ## happy path 1
