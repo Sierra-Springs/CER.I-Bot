@@ -46,6 +46,7 @@ from msg_string_autogen_func import *
 
 
 if __name__ == "__main__":
+    pass  # Do nothing anyway just to autogenerate the msg_string_autogen_func.py file when launching this module alone
     print(MSG_THE_TIME_IS(heure="12", minute="30"))
     print(MSG_TEST("C104"))
     print(MSG_THE_WEATHER_IS("Clear", 4, 52))
