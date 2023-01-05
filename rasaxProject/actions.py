@@ -208,7 +208,7 @@ class ActionWeather(Action):
 
         temp_integer_decimal = str(output['main']['temp']).split(".")
         try:
-            response = MSG_THE_WEATHER_IS(output['weather'][0]['description'],
+            response = MSG_THE_WEATHER_IS(weather=output['weather'][0]['description'],
                                           temperature_integer=temp_integer_decimal[1],
                                           temperature_decimal=temp_integer_decimal[1])
             # trad = translate("The weather is " + "Rain")
@@ -271,15 +271,11 @@ class ActionWiki(Action):
 
         return []
 
-def run():
-    now = datetime.datetime.now()
-    print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
-    print(os.environ["BLOOM_API_KEY"])
-
 
 if __name__ == '__main__':
     now = datetime.datetime.now()
-    print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
+    print(MSG_THE_TIME_IS(heure=now.strftime("%H"),
+                          minute=now.strftime("%M")))
     #print(os.environ["BLOOM_API_KEY"])
 
 
