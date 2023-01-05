@@ -16,6 +16,7 @@ import datetime
 import requests
 import os
 import sys
+import openai
 
 
 source_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -101,6 +102,43 @@ class ActionFonctionnalite(Action):
             answer += funct + ", "
         dispatcher.utter_message(answer)
         return []
+
+
+class ActionGPT(Action):
+
+    def name(self) -> Text:
+        return "action_gpt3"
+
+    def run(self, dispatcher: CollectingDispatcher,
+          tracker: Tracker,
+          domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+            # Replace YOUR_API_KEY with your OpenAI API key
+            openai.api_key = os.environ["OPENAI_API_KEY"]
+
+            # Set the model and prompt
+            model_engine = "text-davinci-003"
+            prompt = "raconte une blague"
+
+            # Set the maximum number of tokens to generate in the response
+            max_tokens = 128
+
+            # Generate a response
+            completion = openai.Completion.create(
+                engine=model_engine,
+                prompt=prompt,
+                max_tokens=1024,
+                temperature=0.5,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0
+            )
+
+            answer = completion.choices[0].text
+            print(answer)
+
+            dispatcher.utter_message(answer)
+            return []
 
 
 class ActionBloom(Action):
