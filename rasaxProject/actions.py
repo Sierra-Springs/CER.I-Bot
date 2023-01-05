@@ -16,7 +16,7 @@ import datetime
 import requests
 import os
 import sys
-import openai
+# import openai
 
 
 source_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

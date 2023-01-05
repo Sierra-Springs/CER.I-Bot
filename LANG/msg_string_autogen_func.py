@@ -1,4 +1,4 @@
-from msg_string_base import *
+from LANG.msg_string_base import *
 
 
 def MSG_TEST(salle):
@@ -14,10 +14,6 @@ def MSG_INDICATE_ROOM_FOR_CLASS(salle):
 
 
 def MSG_THE_WEATHER_IS(weather, temperature_integer, temperature_decimal):
-    return construct_string(locals())
-
-
-def MSG_TON_PERE(couleur, tartempion):
     return construct_string(locals())
 
 

@@ -1,4 +1,3 @@
-from msg_string_base import *
 import re
 import os
 import sys
@@ -9,15 +8,13 @@ source_root = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if source_root not in sys.path:
     sys.path.append(source_root)
 
+from LANG.msg_string_base import *
 
 keys_handled = []
 with open(source_root / "LANG" / "msg_string_autogen_func.py", "w") as msg_string_autogen_func:
-    msg_string_autogen_func.write("from msg_string_base import *\n\n\n")
+    msg_string_autogen_func.write("from LANG.msg_string_base import *\n\n\n")
 
     for key in STRINGS_MSG:
-        print("_" * 30)
-        print(key)
-
         for strings_lang in [STRINGS_MSG, STRING_MSG_ROLLBACK]:
             if key in strings_lang.keys():
                 strings = strings_lang[key]
@@ -33,7 +30,6 @@ with open(source_root / "LANG" / "msg_string_autogen_func.py", "w") as msg_strin
                         if not placeholder in placeholders:
                             placeholders.append(placeholder)
 
-        print(placeholders)
         arguments = ", ".join(placeholders)
 
         msg_string_autogen_func.write(f"def {key}({arguments}):\n")
@@ -42,7 +38,7 @@ with open(source_root / "LANG" / "msg_string_autogen_func.py", "w") as msg_strin
         keys_handled.append(key)
 
 
-from msg_string_autogen_func import *
+from LANG.msg_string_autogen_func import *
 
 
 if __name__ == "__main__":
@@ -50,4 +46,3 @@ if __name__ == "__main__":
     print(MSG_THE_TIME_IS(heure="12", minute="30"))
     print(MSG_TEST("C104"))
     print(MSG_THE_WEATHER_IS("Clear", 4, 52))
-    print(MSG_TON_PERE(couleur="blue", tartempion="square"))
