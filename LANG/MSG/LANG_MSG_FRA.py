@@ -10,5 +10,5 @@ STRINGS_MSG = {'MSG_TEST': "Il est {salle}",
                                                "Vous trouverez votre cours dans la salle {salle}}.",
                                                "Le lieu de votre cours est la salle {salle}."],
                'MSG_THE_WEATHER_IS': "{weather}, la température est de {temperature_integer} degrée {temperature_decimal}.",
-               'MSG_TA_MERE': "Le ciel est {couleur} et {forme}"
+               'MSG_TON_PERE': "Le ciel est {couleur} et {tartempion}"
                }

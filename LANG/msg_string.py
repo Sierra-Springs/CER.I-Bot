@@ -17,18 +17,21 @@ with open(source_root / "LANG" / "msg_string_autogen_func.py", "w") as msg_strin
     for key in STRINGS_MSG:
         print("_" * 30)
         print(key)
-        strings = STRINGS_MSG[key]
-        placeholders = []
 
-        if isinstance(strings, list):
-            for string in strings:
-                for placeholder in re.findall('\{(.*?)\}', string):
-                    if not placeholder in placeholders:
-                        placeholders.append(placeholder)
-        else:
-            for placeholder in re.findall('\{(.*?)\}', strings):
-                if not placeholder in placeholders:
-                    placeholders.append(placeholder)
+        for strings_lang in [STRINGS_MSG, STRING_MSG_ROLLBACK]:
+            if key in strings_lang.keys():
+                strings = strings_lang[key]
+                placeholders = []
+
+                if isinstance(strings, list):
+                    for string in strings:
+                        for placeholder in re.findall('\{(.*?)\}', string):
+                            if not placeholder in placeholders:
+                                placeholders.append(placeholder)
+                else:
+                    for placeholder in re.findall('\{(.*?)\}', strings):
+                        if not placeholder in placeholders:
+                            placeholders.append(placeholder)
 
         print(placeholders)
         arguments = ", ".join(placeholders)
@@ -46,4 +49,4 @@ if __name__ == "__main__":
     print(MSG_THE_TIME_IS(heure="12", minute="30"))
     print(MSG_TEST("C104"))
     print(MSG_THE_WEATHER_IS("Clear", 4, 52))
-    print(MSG_TA_MERE(couleur="blue", forme="square"))
+    print(MSG_TON_PERE(couleur="blue", tartempion="square"))

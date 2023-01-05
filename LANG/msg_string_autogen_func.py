@@ -17,7 +17,7 @@ def MSG_THE_WEATHER_IS(weather, temperature_integer, temperature_decimal):
     return construct_string(locals())
 
 
-def MSG_TA_MERE(couleur, forme):
+def MSG_TON_PERE(couleur, tartempion):
     return construct_string(locals())
 
 
