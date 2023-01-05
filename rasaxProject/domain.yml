@@ -39,6 +39,8 @@ intents:
     use_entities: true
 - fonctionnalities:
     use_entities: true
+- demande_wikipedia:
+    use_entities: true
 entities:
 - section
 - group

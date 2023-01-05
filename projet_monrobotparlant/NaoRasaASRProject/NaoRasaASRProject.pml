@@ -7,6 +7,7 @@
     <Dialogs />
     <Resources>
         <File name="" src=".metadata" />
+        <File name="index" src="html/index.html" />
     </Resources>
     <Topics />
     <IgnoredPaths />
