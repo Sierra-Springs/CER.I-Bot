@@ -16,6 +16,7 @@ import datetime
 import requests
 import os
 import sys
+import openai
 
 
 source_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -103,6 +104,43 @@ class ActionFonctionnalite(Action):
         return []
 
 
+class ActionGPT(Action):
+
+    def name(self) -> Text:
+        return "action_gpt3"
+
+    def run(self, dispatcher: CollectingDispatcher,
+          tracker: Tracker,
+          domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+            # Replace YOUR_API_KEY with your OpenAI API key
+            openai.api_key = os.environ["OPENAI_API_KEY"]
+
+            # Set the model and prompt
+            model_engine = "text-davinci-003"
+            prompt = "raconte une blague"
+
+            # Set the maximum number of tokens to generate in the response
+            max_tokens = 128
+
+            # Generate a response
+            completion = openai.Completion.create(
+                engine=model_engine,
+                prompt=prompt,
+                max_tokens=1024,
+                temperature=0.5,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0
+            )
+
+            answer = completion.choices[0].text
+            print(answer)
+
+            dispatcher.utter_message(answer)
+            return []
+
+
 class ActionBloom(Action):
 
     def name(self) -> Text:
@@ -168,8 +206,11 @@ class ActionWeather(Action):
         #     trad = requests.get(API_GGL + weather)
         #     return trad.json()
 
+        temp_integer_decimal = str(output['main']['temp']).split(".")
         try:
-            response = MSG_THE_WEATHER_IS(output['weather'][0]['description'], output['main']['temp'])
+            response = MSG_THE_WEATHER_IS(weather=output['weather'][0]['description'],
+                                          temperature_integer=temp_integer_decimal[1],
+                                          temperature_decimal=temp_integer_decimal[1])
             # trad = translate("The weather is " + "Rain")
             # print(trad)
         except:
@@ -230,15 +271,11 @@ class ActionWiki(Action):
 
         return []
 
-def run():
-    now = datetime.datetime.now()
-    print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
-    print(os.environ["BLOOM_API_KEY"])
-
 
 if __name__ == '__main__':
     now = datetime.datetime.now()
-    print(MSG_THE_TIME_IS(now.strftime("%H:%M")))
+    print(MSG_THE_TIME_IS(heure=now.strftime("%H"),
+                          minute=now.strftime("%M")))
     #print(os.environ["BLOOM_API_KEY"])
 
 

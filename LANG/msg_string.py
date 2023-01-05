@@ -1,78 +1,53 @@
-import importlib
-import inspect
-import random
-
-module_base = "LANG.MSG."
-
-LANG_MSG_SOURCE = 'LANG_MSG_FRA'
-LANG_MSG_SOURCE_ROLLBACK = 'LANG_MSG_ANG'
-
-# Charge Les string pour les messages dans la langue choisie.
-# Si la langue choisie n'est pas du tout disponible, charge la langue par défaut
-try:
-    STRINGS_MSG = importlib.import_module(module_base + LANG_MSG_SOURCE).STRINGS_MSG
-except:
-    STRINGS_MSG = importlib.import_module(module_base + LANG_MSG_SOURCE_ROLLBACK).STRINGS_MSG
+from msg_string_base import *
+import re
+import os
+import sys
+from pathlib import Path
 
 
-# Charge la langue par défaut pour les strings qui n'existent pas dans la langue choisie.
-STRING_MSG_ROLLBACK = importlib.import_module(module_base + LANG_MSG_SOURCE_ROLLBACK).STRINGS_MSG
+source_root = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if source_root not in sys.path:
+    sys.path.append(source_root)
 
 
-def launch_msg_lang(lang_source):
-    """
-    Permet de changer la langue
-    :param lang_source: Nom de la langue source. exemple: 'LANG_MSG_FRA'
-    """
-    global LANG_MSG_SOURCE, STRINGS_MSG
-    LANG_MSG_SOURCE = lang_source
-    STRINGS_MSG = importlib.import_module(module_base + lang_source).STRINGS_MSG
+keys_handled = []
+with open(source_root / "LANG" / "msg_string_autogen_func.py", "w") as msg_string_autogen_func:
+    msg_string_autogen_func.write("from msg_string_base import *\n\n\n")
+
+    for key in STRINGS_MSG:
+        print("_" * 30)
+        print(key)
+
+        for strings_lang in [STRINGS_MSG, STRING_MSG_ROLLBACK]:
+            if key in strings_lang.keys():
+                strings = strings_lang[key]
+                placeholders = []
+
+                if isinstance(strings, list):
+                    for string in strings:
+                        for placeholder in re.findall('\{(.*?)\}', string):
+                            if not placeholder in placeholders:
+                                placeholders.append(placeholder)
+                else:
+                    for placeholder in re.findall('\{(.*?)\}', strings):
+                        if not placeholder in placeholders:
+                            placeholders.append(placeholder)
+
+        print(placeholders)
+        arguments = ", ".join(placeholders)
+
+        msg_string_autogen_func.write(f"def {key}({arguments}):\n")
+        msg_string_autogen_func.write("    return construct_string(locals())\n\n\n")
+
+        keys_handled.append(key)
 
 
-def get_lang_msg_source():
-    """
-    :return: nom de la langue source sélectionnée
-    """
-    return LANG_MSG_SOURCE
+from msg_string_autogen_func import *
 
-
-def construct_string(args):
-    """
-    Récupère les strings du dictionnaire correspondant au nom de la méthode appelante.
-    Selectionne aléatoirement une string si plusieurs sont disponibles dans une liste
-    Complète les placeholder avec les paramètres passés à la fonction et retourne la string construite.
-    """
-
-    try:
-        # Si la string requise est disponible dans la langue choisie
-        strings = STRINGS_MSG[inspect.stack()[1][3]]  # strings disponibles pour le message
-    except:
-        # Si la string requise n'est pas disponible dans la langue choisie
-        strings = STRING_MSG_ROLLBACK[inspect.stack()[1][3]]  # strings disponibles pour le message
-
-    if isinstance(strings, list):
-        string_index = random.randint(0, len(strings) - 1)  # index de la string choisie
-        selected_string = strings[string_index]
-    else:
-        selected_string = strings
-
-    return selected_string.format(**args)
-
-
-def MSG_TEST(salle):
-    return construct_string(locals())
-
-
-def MSG_THE_TIME_IS(heure, minute):
-    return construct_string(locals())
-
-def MSG_THE_WEATHER_IS(weather, temperature):
-    return construct_string(locals())
-
-def MSG_INDICATE_ROOM_FOR_CLASS(salle):
-    return construct_string(locals())
 
 if __name__ == "__main__":
+    pass  # Do nothing anyway just to autogenerate the msg_string_autogen_func.py file when launching this module alone
     print(MSG_THE_TIME_IS(heure="12", minute="30"))
     print(MSG_TEST("C104"))
-    print(MSG_THE_WEATHER_IS("Clear", 4.52))
+    print(MSG_THE_WEATHER_IS("Clear", 4, 52))
+    print(MSG_TON_PERE(couleur="blue", tartempion="square"))
