@@ -123,7 +123,7 @@ class ActionGPT(Action):
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         sc = GPT3Client()
-        answer = sc.request_text(prompt="salut")
+        answer = sc.request_text(prompt="Raconte moi une blague")
 
         dispatcher.utter_message(answer)
         return []
