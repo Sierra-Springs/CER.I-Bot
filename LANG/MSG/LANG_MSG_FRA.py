@@ -4,10 +4,10 @@ STRINGS_MSG = {'MSG_TEST': "Il est {salle}",
                                    "Il est {heure}:{minute}.",
                                    "La montre indique {heure}:{minute}.",
                                    "Mon horloge interne indique {heure}:{minute}."],
-               'MSG_INDICATE_ROOM_FOR_CLASS': ["Vous avez cours dans la salle {0}}.",
-                                               "Votre cours a lieu dans la salle {0}}.",
-                                               "Le cours se déroule dans la salle {0}}.",
-                                               "Vous trouverez votre cours dans la salle {0}}.",
-                                               "Le lieu de votre cours est la salle {0}."],
-               'MSG_THE_WEATHER_IS': "{weather}, la température est de {temperature} degrée Celsius."
+               'MSG_INDICATE_ROOM_FOR_CLASS': ["Vous avez cours dans la salle {salle}}.",
+                                               "Votre cours a lieu dans la salle {salle}}.",
+                                               "Le cours se déroule dans la salle {salle}}.",
+                                               "Vous trouverez votre cours dans la salle {salle}}.",
+                                               "Le lieu de votre cours est la salle {salle}."],
+               'MSG_THE_WEATHER_IS': "{weather}, la température est de {temperature_integer} degrée {temperature_decimal}."
                }

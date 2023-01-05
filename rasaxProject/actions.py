@@ -206,8 +206,11 @@ class ActionWeather(Action):
         #     trad = requests.get(API_GGL + weather)
         #     return trad.json()
 
+        temp_integer_decimal = str(output['main']['temp']).split(".")
         try:
-            response = MSG_THE_WEATHER_IS(output['weather'][0]['description'], output['main']['temp'])
+            response = MSG_THE_WEATHER_IS(output['weather'][0]['description'],
+                                          temperature_integer=temp_integer_decimal[1],
+                                          temperature_decimal=temp_integer_decimal[1])
             # trad = translate("The weather is " + "Rain")
             # print(trad)
         except:

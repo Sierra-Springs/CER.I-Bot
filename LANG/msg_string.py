@@ -67,7 +67,7 @@ def MSG_THE_TIME_IS(heure, minute):
     return construct_string(locals())
 
 
-def MSG_THE_WEATHER_IS(weather, temperature):
+def MSG_THE_WEATHER_IS(weather, temperature_integer, temperature_decimal):
     return construct_string(locals())
 
 
