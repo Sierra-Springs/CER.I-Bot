@@ -119,3 +119,6 @@
 
 ## intent:demande_wikipedia
 - Parle moi d'[Avignon Université](demande_wiki)
+
+## intent:ask_gpt
+- Raconte moi une blague

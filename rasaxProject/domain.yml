@@ -41,6 +41,8 @@ intents:
     use_entities: true
 - demande_wikipedia:
     use_entities: true
+- ask_gpt:
+    use_entities: true
 entities:
 - section
 - group
@@ -123,5 +125,6 @@ actions:
 - action_fonctionnalite
 - action_weather
 - action_wiki
+- action_gpt3
 forms: {}
 e2e_actions: []

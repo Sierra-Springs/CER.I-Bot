@@ -104,7 +104,7 @@ class ActionFonctionnalite(Action):
 
 
 class GPT3Client:
-    def __init__(self, ip: str = "0.0.0.0", port: int = 8080):
+    def __init__(self, ip: str = "10.126.4.216", port: int = 8080):
         self.base_url = f"http://{ip}:{port}"
 
     def request_text(self, prompt):

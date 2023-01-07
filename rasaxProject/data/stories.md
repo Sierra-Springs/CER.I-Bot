@@ -83,3 +83,7 @@
 ## demande wiki
  * demande_wikipedia 
    - action_wiki
+
+## demande gpt
+ * ask_gpt
+   - action_gpt3
