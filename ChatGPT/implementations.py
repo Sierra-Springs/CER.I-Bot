@@ -24,20 +24,3 @@ def get_cours(societe, pays):
 def get_ville(couleur: str):
     ville = {"rouge": "Avignon", "bleu": "Paris"}
     return ville[couleur.lower()]
-
-
-
-if __name__ == '__main__':
-    input("prompt: ")
-    print("Pour répondre à votre question, j'ai besoin de savoir")
-    print("dans quelle ville vous souhaitez connaître la météo.")
-    print("Pourriez-vous me fournir cette information s'il vous")
-    print("plaît ?")
-
-    input("prompt: ")
-    print("Il fait nuageux avec un peu de soleil à Avignon.")
-    print("La température actuelle est de 14.01°C, mais elle")
-    print(" peut varier entre 13.57°C et 14.66°C aujourd'hui.")
-    print(" Le taux d'humidité est de 78% et la vitesse du vent")
-    print(" est de 4.12 km/h.")
-

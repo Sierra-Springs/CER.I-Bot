@@ -27,7 +27,7 @@ def gen_first_prompt(question):
     string += question
     string += "\n Ne parles pas de ce que je viens de te dire. Ne parles pas des fonctions. Réponds comme d'habitude mais si besoin tu peux procéder ainsi:"
     #string += "\n Comporte toi comme un assistant virtuel et n'explique pas comment tu procède. réponds de façon naturelle."
-    string += "\n Seulement si il manque des informations et que tu ne peux pas les trouver tout seul, poses les questions nécessaires pour les récupérer. Tu peux aussi te servir des autres fonctions pour les trouver. Comporte toi comme un assistant virtuel. Une fois toutes les informations fournies, si besoin, produit un code python en un seul bloc qui réponds à la question au format JSON en utilisant les fonctions données. la fonction main() fini par return json.dumps(answer). Fait des réponses courtes. Ne donne pas de code tant que tu n'as pas toute les informations nécessaires"
+    string += "\n Si il manque des informations, poses les questions nécessaires pour les récupérer. Tu peux aussi te servir des autres fonctions pour les trouver. Comporte toi comme un assistant virtuel. Une fois toutes les informations fournies, si besoin, produit un code python en un seul bloc qui réponds à la question au format JSON en utilisant les fonctions données. la fonction main() fini par return json.dumps(answer). Fait des réponses courtes. Ne donne pas de code tant que tu n'as pas toute les informations nécessaires"
 
     return string
 
