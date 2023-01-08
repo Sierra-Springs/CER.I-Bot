@@ -1,0 +1,38 @@
+.card {
+  /* Ajout d'une bordure arrondie */
+  border-radius: 5px;
+  /* Ajout de quelques ombres pour créer un effet de relief */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  /* Ajout d'un peu d'espace entre les cartes */
+  margin: 10px;
+  /* Ajout d'un peu de padding pour séparer le contenu de la bordure */
+  padding: 20px;
+}
+
+.map-card {
+  /* Hauteur fixe pour la carte */
+  height: 300px;
+  /* Largeur fixe pour la carte */
+  width: 300px;
+}
+
+.weather-card {
+  /* Utilisation de couleurs pour distinguer les différentes cartes */
+  background-color: lightblue;
+}
+
+.visibility-card {
+  background-color: lightgreen;
+}
+
+.wind-card {
+  background-color: lightyellow;
+}
+
+.clouds-card {
+  background-color: lightgray;
+}
+
+.sun-card {
+  background-color: lightpink;
+}

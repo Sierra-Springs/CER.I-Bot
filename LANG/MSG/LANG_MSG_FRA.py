@@ -9,5 +9,10 @@ STRINGS_MSG = {'MSG_TEST': "Il est {salle}",
                                                "Le cours se déroule dans la salle {salle}}.",
                                                "Vous trouverez votre cours dans la salle {salle}}.",
                                                "Le lieu de votre cours est la salle {salle}."],
-               'MSG_THE_WEATHER_IS': "{weather}, la température est de {temperature_integer} degrée {temperature_decimal}."
+               'MSG_THE_WEATHER_IS': ["{weather}, la température est de {temperature_integer} degrée {temperature_decimal}.",
+                                      "{weather} aujourd'hui, avec une température de {temperature_integer} degrée {temperature_decimal}.",
+                                      "Selon les dernières prévisions météo, {weather} avec une température de {temperature_integer} degrée {temperature_decimal}.",
+                                      "La météo du jour : {weather} avec une température de {temperature_integer} degrée {temperature_decimal}.",
+                                      "Il fait actuellement {weather} avec une température de {temperature_integer} degrée {temperature_decimal}.",
+                                      "Le temps aujourd'hui : {weather} et {temperature_integer} degrée{temperature_decimal}."]
                }

@@ -197,7 +197,7 @@ class ActionWeather(Action):
         temp_integer_decimal = str(output['main']['temp']).split(".")
         try:
             response = MSG_THE_WEATHER_IS(weather=output['weather'][0]['description'],
-                                          temperature_integer=temp_integer_decimal[1],
+                                          temperature_integer=temp_integer_decimal[0],
                                           temperature_decimal=temp_integer_decimal[1])
             # trad = translate("The weather is " + "Rain")
             # print(trad)

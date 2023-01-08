@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .weather-card {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 24px;
+        padding: 32px;
+      }
+      .weather-icon {
+        font-size: 96px;
+        color: #f39c12;
+      }
+      .weather-info {
+        display: flex;
+        justify-content: space-between;
+        margin: 16px 0;
+      }
+      .weather-info > div {
+        width: 45%;
+      }
+      .weather-info > div > p {
+        font-size: 18px;
+        margin: 4px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-card">
+        <h1>Météo à Avignon</h1>
+        <i class="fa fa-cloud weather-icon"></i>
+        <div class="weather-info">
+          <div>
+            <p>Température : 12.48°C</p>
+            <p>Sensation de : 11.77°C</p>
+            <p>Température minimale : 11.29°C</p>
+            <p>Température maximale : 12.73°C</p>
+          </div>
+          <div>
+            <p>Pression atmosphérique : 1018 hPa</p>
+            <p>Humidité : 76%</p>
+            <p>Visibilité : 10000 m</p>
+            <p>Vitesse du vent : 5.14 m/s</p>
+          </div>
+        </div>
+      </div>
+      <div id="map"></div>
+      <script>
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 44.0833, lng: 4.8333},
+            zoom: 8
+          });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async defer></script>
+    </div>
+  </body>
+</html>

@@ -74,4 +74,4 @@ if __name__ == '__main__':
 
 
     sc = GPT3Client()
-    sc.test(prompt="salut")
+    sc.test(prompt="Question : Quel est le cours d'Apple en Chine ? Réponse de l'api : {'value': 129,62, 'currency': 'USD', 'gap': 4,60, percent_gap: 3,68}. Génère une phrase pour répondre à la question avec ces informations")
