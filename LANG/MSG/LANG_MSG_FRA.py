@@ -1,5 +1,4 @@
-STRINGS_MSG = {'MSG_TEST': "Il est {salle}",
-               'MSG_THE_TIME_IS': ["Il est {heure} heures et {minute} minutes.",
+STRINGS_MSG = {'MSG_THE_TIME_IS': ["Il est {heure} heures et {minute} minutes.",
                                    "L'heure actuelle est {heure}:{minute}.",
                                    "Il est {heure}:{minute}.",
                                    "La montre indique {heure}:{minute}.",
